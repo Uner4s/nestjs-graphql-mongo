@@ -1,9 +1,9 @@
-import { Module } from '@nestjs/common';
+import { Module } from '@nestjs/common'
+import { APP_FILTER } from '@nestjs/core'
 
-import { APP_FILTER } from '@nestjs/core';
-import { AppExceptionFilter } from './app.exceptions';
-import { CatsModule } from './cats/cats.module';
-import { AppImports } from './app.imports';
+import { AppExceptionFilter } from './app.exceptions'
+import { AppImports } from './app.imports'
+import { CatsModule } from './cats/cats.module'
 
 @Module({
   imports: [...AppImports(process.env), CatsModule],

@@ -1,7 +1,8 @@
-import { Query, Resolver } from '@nestjs/graphql';
-import { CatsService } from './cats.service';
-import { CatsModel } from './entities/cats.model';
-import { HttpException, HttpStatus } from '@nestjs/common';
+import { HttpException, HttpStatus } from '@nestjs/common'
+import { Query, Resolver } from '@nestjs/graphql'
+
+import { CatsModel } from '../entities/cats.model'
+import { CatsService } from '../services/cats.service'
 
 @Resolver(CatsModel)
 export class CatsQueriesResolver {
@@ -9,18 +10,18 @@ export class CatsQueriesResolver {
 
   @Query(() => String)
   helloCatWorld(): string {
-    return 'Hello Cat World!';
+    return 'Hello Cat World!'
   }
 
   @Query(() => [CatsModel])
   async getCatsInBD(): Promise<CatsModel[]> {
     try {
-      return await this.catsService.findAll();
+      return await this.catsService.findAll()
     } catch (error) {
       throw new HttpException(
         error.response,
         error.status || HttpStatus.SERVICE_UNAVAILABLE,
-      );
+      )
     }
   }
 }

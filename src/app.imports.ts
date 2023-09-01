@@ -1,11 +1,10 @@
-import { join } from 'path';
+import { join } from 'path'
 
-import { DynamicModule } from '@nestjs/common';
-import { ConfigModule, ConfigService } from '@nestjs/config';
-import { TypegooseModule } from '@m8a/nestjs-typegoose';
-
-import { GraphQLModule } from '@nestjs/graphql';
-import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
+import { TypegooseModule } from '@m8a/nestjs-typegoose'
+import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo'
+import { DynamicModule } from '@nestjs/common'
+import { ConfigModule, ConfigService } from '@nestjs/config'
+import { GraphQLModule } from '@nestjs/graphql'
 
 export const AppImports = (env: NodeJS.ProcessEnv): DynamicModule[] => {
   return [
@@ -29,5 +28,5 @@ export const AppImports = (env: NodeJS.ProcessEnv): DynamicModule[] => {
       }),
       inject: [ConfigService],
     }),
-  ];
-};
+  ]
+}

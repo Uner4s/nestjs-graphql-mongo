@@ -4,4 +4,4 @@ enum ServerErrorTypeEnum {
   other_error = 'OTHER_ERROR',
 }
 
-export { ServerErrorTypeEnum };
+export { ServerErrorTypeEnum }
