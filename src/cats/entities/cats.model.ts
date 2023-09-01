@@ -4,7 +4,7 @@ import { Index, prop } from '@typegoose/typegoose'
 import { MongoProps } from '../../helpers/entities/mongo.model'
 
 @ObjectType()
-@Index({ email: 1 }, { unique: true })
+@Index({ email: 1 })
 export class CatsModel extends MongoProps {
   @Field(() => ID)
   _id!: string
