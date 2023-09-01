@@ -35,6 +35,7 @@ describe('CatsResolver', () => {
   // Close all BD Connections
   afterAll(async () => {
     await mongoose.disconnect()
+    mongoServer.removeAllListeners()
     await mongoServer.stop()
   })
 
